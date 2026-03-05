@@ -1,0 +1,16 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*.tmp
+docs/_tmp_*.md
+# Private local notes (do not publish)
+_private_backups/
+
