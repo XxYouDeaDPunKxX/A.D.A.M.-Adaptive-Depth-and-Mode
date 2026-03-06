@@ -70,35 +70,40 @@
       </section>
 
       <section id="protocol" class="protocol-grid">
-        <div class="section-heading">
-          <p class="eyebrow">Why it exists</p>
-          <h2>Stable depth is a routing problem.</h2>
-          <p>
-            A.D.A.M. separates lexical routing, structural inference, and publish-boundary validation.
-            That is what makes it feel less improvisational and more like a protocol artifact.
-          </p>
+        <div class="protocol-copy">
+          <div class="section-heading">
+            <p class="eyebrow">Why it exists</p>
+            <h2>Stable depth is a routing problem.</h2>
+            <p>
+              A.D.A.M. separates lexical routing, structural inference, and publish-boundary validation.
+              That is what makes it feel less improvisational and more like a protocol artifact.
+            </p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Manual override</h3>
+              <p>LOW, MID, and DEEP are explicit control surfaces, not suggestions hidden inside prose.</p>
+              <code>DEEP explain this briefly</code>
+            </article>
+            <article class="feature-card">
+              <h3>Structural kernel</h3>
+              <p>Depth candidates come from shape and constraints, not vague intent guessing.</p>
+              <code>2+ options + criteria -&gt; POSSIBLE DEEP</code>
+            </article>
+            <article class="feature-card">
+              <h3>Bounded audit</h3>
+              <p>Audit is visible only when needed, rigid when active, and never allowed to balloon.</p>
+              <code>AUDIT / A: / R: / V:</code>
+            </article>
+            <article class="feature-card">
+              <h3>Fail-closed behavior</h3>
+              <p>If the host cannot satisfy the contract, the protocol degrades deterministically.</p>
+              <code>ADAM_UNSUPPORTED</code>
+            </article>
+          </div>
         </div>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3>Manual override</h3>
-            <p>LOW, MID, and DEEP are explicit control surfaces, not suggestions hidden inside prose.</p>
-            <code>DEEP explain this briefly</code>
-          </article>
-          <article class="feature-card">
-            <h3>Structural kernel</h3>
-            <p>Depth candidates come from shape and constraints, not vague intent guessing.</p>
-            <code>2+ options + criteria -&gt; POSSIBLE DEEP</code>
-          </article>
-          <article class="feature-card">
-            <h3>Bounded audit</h3>
-            <p>Audit is visible only when needed, rigid when active, and never allowed to balloon.</p>
-            <code>AUDIT / A: / R: / V:</code>
-          </article>
-          <article class="feature-card">
-            <h3>Fail-closed behavior</h3>
-            <p>If the host cannot satisfy the contract, the protocol degrades deterministically.</p>
-            <code>ADAM_UNSUPPORTED</code>
-          </article>
+        <div class="protocol-visual">
+          <img src="assets/images/adam-field-frame.png" alt="A.D.A.M. routing field visualization">
         </div>
       </section>
 
@@ -173,32 +178,27 @@ Switch to DEEP? (yes/no)</code></pre>
       </section>
 
       <section id="hosts" class="host-section">
-        <div class="host-copy">
-          <div class="section-heading">
-            <p class="eyebrow">Built for real host behavior</p>
-            <h2>Uploads can be inline, side-channel, polluted, or broken.</h2>
-            <p>
-              A.D.A.M. is designed around actual host friction: boot guards, explicit probes, degraded transports,
-              strict command matching, and deterministic fallback behavior.
-            </p>
-          </div>
-          <div class="host-map">
-            <div class="host-node active">
-              <span>BOOT_GUARDS</span>
-              <p>Whitespace-only, spec echo, metadata-only upload.</p>
-            </div>
-            <div class="host-node">
-              <span>CONTROL PATH</span>
-              <p>Commands and overrides resolved lexically before semantic interpretation.</p>
-            </div>
-            <div class="host-node">
-              <span>OUTPUT CONTRACT</span>
-              <p>Final text validated at the publish boundary.</p>
-            </div>
-          </div>
+        <div class="section-heading">
+          <p class="eyebrow">Built for real host behavior</p>
+          <h2>Uploads can be inline, side-channel, polluted, or broken.</h2>
+          <p>
+            A.D.A.M. is designed around actual host friction: boot guards, explicit probes, degraded transports,
+            strict command matching, and deterministic fallback behavior.
+          </p>
         </div>
-        <div class="host-visual">
-          <img src="assets/images/adam-field-frame.png" alt="A.D.A.M. host field visualization">
+        <div class="host-map">
+          <div class="host-node active">
+            <span>BOOT_GUARDS</span>
+            <p>Whitespace-only, spec echo, metadata-only upload.</p>
+          </div>
+          <div class="host-node">
+            <span>CONTROL PATH</span>
+            <p>Commands and overrides resolved lexically before semantic interpretation.</p>
+          </div>
+          <div class="host-node">
+            <span>OUTPUT CONTRACT</span>
+            <p>Final text validated at the publish boundary.</p>
+          </div>
         </div>
       </section>
 
