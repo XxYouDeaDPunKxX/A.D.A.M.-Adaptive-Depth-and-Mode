@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #050811;
   --panel: rgba(12, 18, 31, 0.78);
   --panel-strong: rgba(16, 24, 40, 0.9);
@@ -83,12 +83,36 @@ img {
   font-size: 0.92rem;
 }
 
-.hero {
+.hero,
+.deep-frame,
+.host-section,
+.audit-section {
   display: grid;
-  grid-template-columns: 1.02fr 1.18fr;
   gap: 28px;
   align-items: center;
+}
+
+.hero {
+  grid-template-columns: 1.02fr 1.18fr;
   padding: 40px 0 18px;
+}
+
+.deep-frame,
+.audit-section {
+  grid-template-columns: 0.92fr 1.08fr;
+  padding: 24px;
+  margin: 12px 0 18px;
+  background:
+    linear-gradient(180deg, rgba(126, 211, 255, 0.07), rgba(255, 255, 255, 0.02)),
+    var(--panel-strong);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.host-section {
+  grid-template-columns: 0.98fr 1.02fr;
+  padding: 34px 0 28px;
 }
 
 .eyebrow {
@@ -115,8 +139,6 @@ img {
 .feature-card p,
 .variant-grid p,
 .host-node p,
-.atlas-card span,
-.deep-copy p,
 .problem-strip p {
   color: var(--muted);
   line-height: 1.75;
@@ -140,17 +162,19 @@ img {
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
-.button:hover,
-.link-card:hover {
-  transform: translateY(-3px);
-}
-
 .button.primary {
   background: linear-gradient(135deg, rgba(126, 211, 255, 0.18), rgba(255, 201, 120, 0.12));
 }
 
 .button.secondary {
   background: rgba(255, 255, 255, 0.02);
+}
+
+.button:hover,
+.link-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(223, 245, 255, 0.28);
+  background: rgba(14, 21, 36, 0.96);
 }
 
 .hero-points,
@@ -183,13 +207,16 @@ img {
 }
 
 .hero-visual,
-.deep-visual {
+.deep-visual,
+.host-visual,
+.audit-visual {
   position: relative;
 }
 
 .hero-visual img,
 .deep-visual img,
-.atlas-card img {
+.host-visual img,
+.audit-visual img {
   border-radius: 28px;
   border: 1px solid rgba(223, 245, 255, 0.16);
   box-shadow: var(--shadow);
@@ -207,7 +234,7 @@ img {
 .feature-grid,
 .variant-grid,
 .link-grid,
-.atlas-grid {
+.host-map {
   display: grid;
   gap: 18px;
 }
@@ -222,17 +249,20 @@ img {
 .demo-card,
 .variant-grid article,
 .host-node,
-.link-card,
-.atlas-card,
-.deep-frame {
+.link-card {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 24px;
   box-shadow: var(--shadow);
 }
 
-.problem-strip article {
-  padding: 22px;
+.problem-strip article,
+.feature-card,
+.demo-card,
+.variant-grid article,
+.host-node,
+.link-card {
+  padding: 24px;
 }
 
 .problem-strip span,
@@ -240,8 +270,7 @@ img {
 .demo-card h3,
 .variant-grid h3,
 .host-node span,
-.link-card span,
-.atlas-card strong {
+.link-card span {
   display: block;
   margin-bottom: 10px;
 }
@@ -249,32 +278,16 @@ img {
 .problem-strip span,
 .feature-card h3,
 .demo-card h3,
-.variant-grid h3,
-.atlas-card strong {
+.variant-grid h3 {
   font-size: 1.08rem;
   color: var(--ice);
 }
 
 .protocol-grid,
 .demo-panel,
-.deep-frame,
-.atlas-section,
 .variants,
-.host-section,
 .link-section {
   padding: 34px 0 28px;
-}
-
-.deep-frame {
-  display: grid;
-  grid-template-columns: 0.92fr 1.08fr;
-  gap: 24px;
-  padding: 24px;
-  margin: 12px 0 18px;
-}
-
-.deep-copy {
-  align-self: center;
 }
 
 .section-heading {
@@ -287,16 +300,9 @@ img {
   margin-bottom: 14px;
 }
 
-.feature-grid {
+.feature-grid,
+.demo-columns {
   grid-template-columns: repeat(2, 1fr);
-}
-
-.feature-card,
-.variant-grid article,
-.host-node,
-.link-card,
-.atlas-card figcaption {
-  padding: 24px;
 }
 
 .feature-card code,
@@ -309,13 +315,7 @@ img {
 }
 
 .demo-columns {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 18px;
-}
-
-.demo-card {
-  padding: 24px;
 }
 
 .demo-card pre {
@@ -328,29 +328,10 @@ img {
   color: var(--ice);
 }
 
-.demo-card.output,
-.deep-frame {
+.demo-card.output {
   background:
     linear-gradient(180deg, rgba(126, 211, 255, 0.07), rgba(255, 255, 255, 0.02)),
     var(--panel-strong);
-}
-
-.atlas-grid {
-  grid-template-columns: 1.25fr 1fr 1fr;
-  align-items: start;
-}
-
-.atlas-card {
-  overflow: hidden;
-}
-
-.atlas-card.wide {
-  grid-row: span 2;
-}
-
-.atlas-card figcaption {
-  display: grid;
-  gap: 8px;
 }
 
 .variant-grid,
@@ -388,12 +369,6 @@ img {
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
-.link-card:hover,
-.button:hover {
-  border-color: rgba(223, 245, 255, 0.28);
-  background: rgba(14, 21, 36, 0.96);
-}
-
 .site-footer {
   padding: 40px 0 8px;
   color: var(--muted);
@@ -408,14 +383,11 @@ img {
   .demo-columns,
   .deep-frame,
   .variant-grid,
+  .host-section,
   .host-map,
-  .link-grid,
-  .atlas-grid {
+  .audit-section,
+  .link-grid {
     grid-template-columns: 1fr;
-  }
-
-  .atlas-card.wide {
-    grid-row: auto;
   }
 
   .site-header {
