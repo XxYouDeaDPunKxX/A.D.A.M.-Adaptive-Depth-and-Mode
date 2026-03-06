@@ -47,6 +47,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 .page-shell {
   width: min(1240px, calc(100vw - 40px));
   margin: 0 auto;
@@ -78,81 +83,78 @@ a {
   font-size: 0.92rem;
 }
 
-.site-nav a:hover {
-  color: var(--ice);
-}
-
 .hero {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 42px;
+  grid-template-columns: 1.02fr 1.18fr;
+  gap: 28px;
   align-items: center;
-  padding: 56px 0 42px;
+  padding: 40px 0 18px;
 }
 
 .eyebrow {
-  color: var(--blue);
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 0.82rem;
   margin: 0 0 14px;
+  color: var(--blue);
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .hero h1,
 .section-heading h2 {
-  margin: 0;
-  line-height: 0.96;
+  margin: 0 0 16px;
+  line-height: 1.02;
   letter-spacing: -0.04em;
 }
 
 .hero h1 {
-  font-size: clamp(2.9rem, 7vw, 6.3rem);
-  max-width: 10.5ch;
+  font-size: clamp(2.8rem, 6vw, 5.6rem);
 }
 
 .lead,
 .section-heading p,
 .feature-card p,
 .variant-grid p,
-.host-node p {
+.host-node p,
+.atlas-card span,
+.deep-copy p,
+.problem-strip p {
   color: var(--muted);
-  font-size: 1.04rem;
-  line-height: 1.7;
-}
-
-.lead {
-  max-width: 62ch;
-  margin: 22px 0 0;
+  line-height: 1.75;
 }
 
 .cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin: 28px 0 22px;
+  margin: 28px 0 24px;
 }
 
 .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 18px;
   border-radius: 999px;
   border: 1px solid var(--line);
+  font-weight: 700;
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
-.button:hover {
-  transform: translateY(-2px);
+.button:hover,
+.link-card:hover {
+  transform: translateY(-3px);
 }
 
 .button.primary {
-  background: linear-gradient(135deg, rgba(126, 211, 255, 0.18), rgba(255, 201, 120, 0.18));
-  border-color: rgba(223, 245, 255, 0.3);
+  background: linear-gradient(135deg, rgba(126, 211, 255, 0.18), rgba(255, 201, 120, 0.12));
 }
 
 .button.secondary {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.02);
 }
 
-.hero-points {
+.hero-points,
+.deep-points {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -161,22 +163,36 @@ a {
   color: var(--ice);
 }
 
-.hero-points li::before {
-  content: "•";
-  color: var(--amber);
-  margin-right: 10px;
-}
-
-.hero-visual {
+.hero-points li,
+.deep-points li {
+  padding-left: 16px;
   position: relative;
 }
 
-.hero-visual img {
-  width: 100%;
+.hero-points li::before,
+.deep-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--amber));
+  box-shadow: 0 0 14px rgba(126, 211, 255, 0.8);
+}
+
+.hero-visual,
+.deep-visual {
+  position: relative;
+}
+
+.hero-visual img,
+.deep-visual img,
+.atlas-card img {
   border-radius: 28px;
   border: 1px solid rgba(223, 245, 255, 0.16);
   box-shadow: var(--shadow);
-  display: block;
 }
 
 .hero-glow {
@@ -190,7 +206,8 @@ a {
 .problem-strip,
 .feature-grid,
 .variant-grid,
-.link-grid {
+.link-grid,
+.atlas-grid {
   display: grid;
   gap: 18px;
 }
@@ -205,7 +222,9 @@ a {
 .demo-card,
 .variant-grid article,
 .host-node,
-.link-card {
+.link-card,
+.atlas-card,
+.deep-frame {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 24px;
@@ -221,7 +240,8 @@ a {
 .demo-card h3,
 .variant-grid h3,
 .host-node span,
-.link-card span {
+.link-card span,
+.atlas-card strong {
   display: block;
   margin-bottom: 10px;
 }
@@ -229,17 +249,32 @@ a {
 .problem-strip span,
 .feature-card h3,
 .demo-card h3,
-.variant-grid h3 {
+.variant-grid h3,
+.atlas-card strong {
   font-size: 1.08rem;
   color: var(--ice);
 }
 
 .protocol-grid,
 .demo-panel,
+.deep-frame,
+.atlas-section,
 .variants,
 .host-section,
 .link-section {
   padding: 34px 0 28px;
+}
+
+.deep-frame {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 24px;
+  padding: 24px;
+  margin: 12px 0 18px;
+}
+
+.deep-copy {
+  align-self: center;
 }
 
 .section-heading {
@@ -256,7 +291,11 @@ a {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.feature-card {
+.feature-card,
+.variant-grid article,
+.host-node,
+.link-card,
+.atlas-card figcaption {
   padding: 24px;
 }
 
@@ -289,28 +328,38 @@ a {
   color: var(--ice);
 }
 
-.demo-card.output {
+.demo-card.output,
+.deep-frame {
   background:
     linear-gradient(180deg, rgba(126, 211, 255, 0.07), rgba(255, 255, 255, 0.02)),
     var(--panel-strong);
 }
 
-.variant-grid {
-  grid-template-columns: repeat(3, 1fr);
+.atlas-grid {
+  grid-template-columns: 1.25fr 1fr 1fr;
+  align-items: start;
 }
 
-.variant-grid article {
-  padding: 24px;
+.atlas-card {
+  overflow: hidden;
 }
 
-.host-map {
+.atlas-card.wide {
+  grid-row: span 2;
+}
+
+.atlas-card figcaption {
   display: grid;
+  gap: 8px;
+}
+
+.variant-grid,
+.host-map,
+.link-grid {
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
 }
 
 .host-node {
-  padding: 24px;
   position: relative;
   overflow: hidden;
 }
@@ -335,17 +384,12 @@ a {
   color: var(--ice);
 }
 
-.link-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .link-card {
-  padding: 24px;
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
-.link-card:hover {
-  transform: translateY(-3px);
+.link-card:hover,
+.button:hover {
   border-color: rgba(223, 245, 255, 0.28);
   background: rgba(14, 21, 36, 0.96);
 }
@@ -362,10 +406,16 @@ a {
   .problem-strip,
   .feature-grid,
   .demo-columns,
+  .deep-frame,
   .variant-grid,
   .host-map,
-  .link-grid {
+  .link-grid,
+  .atlas-grid {
     grid-template-columns: 1fr;
+  }
+
+  .atlas-card.wide {
+    grid-row: auto;
   }
 
   .site-header {
