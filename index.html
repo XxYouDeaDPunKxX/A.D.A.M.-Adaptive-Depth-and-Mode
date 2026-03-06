@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A.D.A.M. | Adaptive Depth and Mode</title>
+  <meta name="description" content="A spec-first protocol for deterministic depth control, bounded epistemic output, and stable AI chat behavior.">
+  <meta property="og:title" content="A.D.A.M. | Adaptive Depth and Mode">
+  <meta property="og:description" content="A protocol for controlling depth, not just prompting it.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="banner.png">
+  <meta property="og:url" content="https://xxyoudeadpunkxx.github.io/A.D.A.M.-Adaptive-Depth-and-Mode/">
+  <meta name="theme-color" content="#07111e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#top">A.D.A.M.</a>
+      <nav class="site-nav">
+        <a href="#protocol">Protocol</a>
+        <a href="#variants">Variants</a>
+        <a href="#hosts">Hosts</a>
+        <a href="#links">Links</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Adaptive Depth and Mode</p>
+          <h1>A protocol for controlling depth, not just prompting it.</h1>
+          <p class="lead">
+            A.D.A.M. is a spec-first control layer for AI chat: deterministic routing,
+            bounded audit, explicit depth transitions, and fail-closed behavior when the host cannot respect the contract.
+          </p>
+          <div class="cta-row">
+            <a class="button primary" href="https://github.com/XxYouDeaDPunKxX/A.D.A.M.-Adaptive-Depth-and-Mode">Open the repository</a>
+            <a class="button secondary" href="https://github.com/XxYouDeaDPunKxX/A.D.A.M.-Adaptive-Depth-and-Mode/releases/tag/v0.4.0">Read v0.4.0</a>
+          </div>
+          <ul class="hero-points">
+            <li>Manual override before semantic drift</li>
+            <li>Structural kernel as SSOT</li>
+            <li>Bounded epistemic output under pressure</li>
+          </ul>
+        </div>
+        <div class="hero-visual">
+          <img src="banner.png" alt="A.D.A.M. protocol visualization">
+          <div class="hero-glow"></div>
+        </div>
+      </section>
+
+      <section class="problem-strip">
+        <article>
+          <span>Too shallow</span>
+          <p>When the assistant compresses before the problem is even understood.</p>
+        </article>
+        <article>
+          <span>Too deep too early</span>
+          <p>When depth becomes noise instead of precision.</p>
+        </article>
+        <article>
+          <span>Too inconsistent</span>
+          <p>When the same prompt style produces different behavior from one turn to the next.</p>
+        </article>
+      </section>
+
+      <section id="protocol" class="protocol-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Why it exists</p>
+          <h2>Stable depth is a routing problem.</h2>
+          <p>
+            A.D.A.M. separates lexical routing, structural inference, and publish-boundary validation.
+            That is what makes it feel less improvisational and more like a protocol artifact.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Manual override</h3>
+            <p>LOW, MID, and DEEP are explicit control surfaces, not suggestions hidden inside prose.</p>
+            <code>DEEP explain this briefly</code>
+          </article>
+          <article class="feature-card">
+            <h3>Structural kernel</h3>
+            <p>Depth candidates come from shape and constraints, not vague intent guessing.</p>
+            <code>2+ options + criteria -> POSSIBLE DEEP</code>
+          </article>
+          <article class="feature-card">
+            <h3>Bounded audit</h3>
+            <p>Audit is visible only when needed, rigid when active, and never allowed to balloon.</p>
+            <code>AUDIT / A: / R: / V:</code>
+          </article>
+          <article class="feature-card">
+            <h3>Fail-closed behavior</h3>
+            <p>If the host cannot satisfy the contract, the protocol degrades deterministically.</p>
+            <code>ADAM_UNSUPPORTED</code>
+          </article>
+        </div>
+      </section>
+
+      <section class="demo-panel">
+        <div class="section-heading">
+          <p class="eyebrow">See it work</p>
+          <h2>Not a moodboard. A behavioral surface.</h2>
+        </div>
+        <div class="demo-columns">
+          <article class="demo-card">
+            <h3>Input</h3>
+            <pre><code>User:
+Compare A) and B)
+Budget: 100
+Need:
+- speed
+- reliability
+- low waste</code></pre>
+          </article>
+          <article class="demo-card output">
+            <h3>Output</h3>
+            <pre><code>MODE: MID -> POSSIBLE DEEP
+RX: len=...
+Compact recommendation...
+AUDIT
+A: ...
+R: ...
+V: ...
+Switch to DEEP? (yes/no)</code></pre>
+          </article>
+        </div>
+      </section>
+
+      <section id="variants" class="variants">
+        <div class="section-heading">
+          <p class="eyebrow">Deployment surfaces</p>
+          <h2>Three variants. Three host realities.</h2>
+        </div>
+        <div class="variant-grid">
+          <article>
+            <h3>Normal</h3>
+            <p>The full protocol surface for hosts that can carry the complete contract cleanly.</p>
+          </article>
+          <article>
+            <h3>UI-LITE</h3>
+            <p>The same behavior with a simpler visible UI: tags and bounded audit, no decorative Unicode dependency.</p>
+          </article>
+          <article>
+            <h3>Guest Card</h3>
+            <p>A compatibility layer for weak or paste-only hosts. Useful, intentionally narrower, not full parity.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="hosts" class="host-section">
+        <div class="section-heading">
+          <p class="eyebrow">Built for real host behavior</p>
+          <h2>Uploads can be inline, side-channel, polluted, or broken.</h2>
+          <p>
+            A.D.A.M. is designed around actual host friction: boot guards, explicit probes, degraded transports,
+            strict command matching, and deterministic fallback behavior.
+          </p>
+        </div>
+        <div class="host-map">
+          <div class="host-node active">
+            <span>BOOT_GUARDS</span>
+            <p>Whitespace-only, spec echo, metadata-only upload.</p>
+          </div>
+          <div class="host-node">
+            <span>CONTROL PATH</span>
+            <p>Commands and overrides resolved lexically before semantic interpretation.</p>
+          </div>
+          <div class="host-node">
+            <span>OUTPUT CONTRACT</span>
+            <p>Final text validated at the publish boundary.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="links" class="link-section">
+        <div class="section-heading">
+          <p class="eyebrow">Start here</p>
+          <h2>Go deeper where it matters.</h2>
+        </div>
+        <div class="link-grid">
+          <a href="https://github.com/XxYouDeaDPunKxX/A.D.A.M.-Adaptive-Depth-and-Mode" class="link-card">
+            <span>Repository</span>
+            <strong>Protocol, docs, tests</strong>
+          </a>
+          <a href="https://github.com/XxYouDeaDPunKxX/A.D.A.M.-Adaptive-Depth-and-Mode/releases/tag/v0.4.0" class="link-card">
+            <span>Release</span>
+            <strong>v0.4.0 first public release</strong>
+          </a>
+          <a href="https://github.com/XxYouDeaDPunKxX/A.D.A.M.-Adaptive-Depth-and-Mode/discussions/1" class="link-card">
+            <span>Discussion</span>
+            <strong>First release announcement</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>A.D.A.M. v4 protocol line · v0.4.0 public release · CC BY-SA 4.0</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
