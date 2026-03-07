@@ -103,7 +103,7 @@ Notes
 ## Prompt Integrity Check (Operator)
 
 Goal: detect host-side input rewriting/filtering (prompt tampering). A.D.A.M. cannot prevent this inside an untrusted host.
-If DEEP gating triggers, compare the in-spec `RX:` receipt line (line 2) to what you sent; mismatch suggests host rewriting/filtering.
+If DEEP gating triggers, compare the in-spec `RX:` receipt line (line 2) to what you sent; mismatch suggests host rewriting/filtering. `RX:` is a receipt of the raw message as seen by the model, not an external log.
 Note: In FULL/UI-LITE manual override (`DEEP ...`), `RX:` includes the leading `DEEP` token because it is a receipt of the raw message as seen by the model.
 
 CANARY rule (strict):

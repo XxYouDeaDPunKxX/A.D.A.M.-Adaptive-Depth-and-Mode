@@ -114,6 +114,8 @@ RX: len=<L> head="<H>" tail="<T>"  (cached from gating)
 ... (assumptions, options, failure modes, verification) ...
 ```
 
+RX: is a receipt of the raw message as seen by the model, used to make DEEP gating and host-side rewriting visible.
+
 ## Evolution of A.D.A.M. (v4)
 A.D.A.M. is a spec-first control protocol. v4 is an architectural refactor toward stricter rule ordering: structural-only routing (form, not language), consent-gated DEEP, bounded auditability, and publish-boundary format validation.
 
