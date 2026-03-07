@@ -15,7 +15,7 @@ Note: `HOST_SETUP.md` is for the human operator. Do NOT upload/paste it into the
 2) Reference-only host (uploads treated as "reference", not SYSTEM)
 - The file is visible, but may not be applied as authoritative behavior.
 - Use the BOOTSTRAP handshake once to confirm the spec is actually being followed.
-- If the spec text is visible in the chat but the assistant claims "the file does not exist", treat it as a transport/mount issue (not absence). Activation authority must not be derived from mounting/paths. Re-run BOOTSTRAP or use `RELOAD KERNEL` to remount the minimal header.
+- If the spec text is visible in the chat but the assistant claims "the file does not exist", treat it as a transport/mount issue (not absence). Activation authority must not be derived from mounting/paths. Re-run BOOTSTRAP or use `RELOAD KERNEL` to remount the minimal core.
 
 3) Guest / paste-only host
 - No reliable system prompt, or persistence is weak.
@@ -93,9 +93,9 @@ Notes
 - If the reply does not start with the mode tag, the host is not enforcing the contract. Use Guest Card paste-every-time.
 - Do not include punctuation in control commands (e.g., write `ADAM ON`, not `ADAM ON.`).
 - Some hosts "inline" uploaded attachments into the user message (e.g., wrappers like `[file name]: ...` or snippets). In that case, A.D.A.M. may respond with `ADAM_SPEC_OK` (BOOT_GUARDS spec-echo) instead of `ADAM_PING_OK`. This is expected.
-- Some hosts provide upload metadata only (e.g., `<uploaded_files>...</uploaded_files>` with a path) and keep the file contents out-of-band. In that case, A.D.A.M. may respond with `ADAM_UPLOAD_META_ONLY`; you must send `ADAM PING`/`ADAM ON` (or paste the Guest Card) to activate deterministically.
+- Some hosts provide upload metadata only (e.g., `<uploaded_files>...</uploaded_files>` with a path) and keep the file contents out-of-band. In that case, A.D.A.M. may respond with `ADAM_UPLOAD_META_ONLY`; you must send `ADAM PING`/`ADAM ON` (or paste the Guest Card) to activate through a strict in-band step.
 - Note: `ADAM_UPLOAD_META_ONLY` is intentionally conservative (whitelist-only). If it does not trigger, use `ADAM PING` anyway.
-- Example: if the assistant replies with `ADAM_UPLOAD_META_ONLY`, the next deterministic step is `ADAM PING`; the expected confirmation is the strict `ADAM_PING_OK` response.
+- Example: if the assistant replies with `ADAM_UPLOAD_META_ONLY`, the next strict recovery step is `ADAM PING`; the expected confirmation is the strict `ADAM_PING_OK` response.
 - If you get `SOURCE_FILE_UNAVAILABLE <FILENAME>`, the host did not provide that source file in this context (not a kernel failure).
 
 ---
@@ -125,7 +125,7 @@ CANARY rule (strict):
 
 ## Operator Recovery (Standardized Commands Only)
 
-Goal: recover determinism when the host drifts, without ad-hoc operator codes or new UI.
+Goal: restore rule alignment when the host drifts, without ad-hoc operator codes or new UI.
 
 Use ONLY standardized mechanisms defined in the spec:
 - Manual override: `LOW ...` / `MID ...` / `DEEP ...` (first token; one-shot)
@@ -169,9 +169,14 @@ Common scenarios:
 
 7) You see drift (emoji, verbosity, wrong format) but no hard failure
 - Action: run `RELOAD KERNEL` as a standalone message (case-sensitive; command at start).
-- Expect: strict multi-line output block starting with `KERNEL_REMOUNT v4` (no extra text).
+- Expect: strict multi-line output block containing `KERNEL_ANCHOR`, `SPEC_SIGNATURE`, and `KERNEL_END_ANCHOR` (no extra text).
 - If you suspect short-context truncation: the loaded kernel should contain `KERNEL_ANCHOR` and end with `KERNEL_END_ANCHOR`. If not, re-run `RELOAD KERNEL`.
 - Next: restate the request in one message. If drift persists, use UI-LITE or Guest Card for that session.
+
+7b) The session feels degraded and you want a stronger recovery path
+- Action: run `ADAM REMOUNT` as a standalone message, then re-paste the exact remount block as your next user message.
+- Expect: the replayed block should trigger the standard bootstrap confirmation surface (`ADAM_SPEC_OK`).
+- Best practice: after the replay, probe with a DEEP-gating input first; if the session still feels unstable, use the same remount block in a fresh session instead.
 
 8) You asked for exhaustive risks/verifications in MID
 - Rule: in `MODE != DEEP`, the spec does not enumerate "ALL risks/verifications" by default.

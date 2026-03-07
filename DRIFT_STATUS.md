@@ -60,6 +60,8 @@ Rows (exact order and labels):
 | TAG_VALID | last N_USED assistant replies | tag matches the spec tag set | (write `a/b (p%)`) | 0-3 |
 | GATING_FORMAT | replies with POSSIBLE DEEP tag | last line is "Switch to DEEP? (yes/no)" | (write `a/b (p%)`) | 0-3 |
 | MANUAL_OVERRIDE | user msgs with manual override | tag matches override | (write `a/b (p%)`) | 0-3 |
+| AUDIT_GROUNDED | replies with AUDIT and non-\`-\` R:/V: lines | R:/V: reference specific content from the response body; if not grounded, use \`-\` | (write `a/b (p%)`) | 0-3 |
+| COMMIT_INVALIDATION | replies after new information breaks a prior COMMIT premise | prior COMMIT is explicitly voided before proceeding | (write `a/b (p%)`) | 0-3 |
 | NO_INERTIA_FACTOID | factoid after DEEP | tag is LOW | (write `a/b (p%)`) | 0-3 |
 
 Scoring for each row:
@@ -70,14 +72,14 @@ Scoring for each row:
 - Score NA if no samples
 
 Final line (exactly one line):
-DRIFT_WINDOW: <N_REQUESTED> | DRIFT_WINDOW_CAP: <N_EFFECTIVE> | DRIFT_WINDOW_AVAILABLE: <N_AVAILABLE> | DRIFT_WINDOW_USED: <N_USED> | FORMAT: <0-3/NA> | RULES: <0-3/NA> | GRADE: <OK|WARN|FAIL> | DRIFT_EVENTS: <count> | COVERAGE: <tested_rows>/5 | NA_ROWS: <0-5>
+DRIFT_WINDOW: <N_REQUESTED> | DRIFT_WINDOW_CAP: <N_EFFECTIVE> | DRIFT_WINDOW_AVAILABLE: <N_AVAILABLE> | DRIFT_WINDOW_USED: <N_USED> | FORMAT: <0-3/NA> | RULES: <0-3/NA> | GRADE: <OK|WARN|FAIL> | DRIFT_EVENTS: <count> | COVERAGE: <tested_rows>/7 | NA_ROWS: <0-7>
 
 Where:
 - FORMAT = rounded average of (TAG_FIRST_LINE, TAG_VALID) scores, excluding NA (if both NA, FORMAT=NA)
-- RULES = rounded average of (GATING_FORMAT, MANUAL_OVERRIDE, NO_INERTIA_FACTOID) scores, excluding NA (if all NA, RULES=NA)
+- RULES = rounded average of (GATING_FORMAT, MANUAL_OVERRIDE, AUDIT_GROUNDED, COMMIT_INVALIDATION, NO_INERTIA_FACTOID) scores, excluding NA (if all NA, RULES=NA)
 - DRIFT_EVENTS = sum of (b - a) over all non-NA rows where b > 0
 - NA_ROWS = count of rows with Score = NA
-- COVERAGE = number of non-NA rows over 5
+- COVERAGE = number of non-NA rows over 7
 - GRADE:
   - OK if FORMAT >= 2 and RULES >= 2 and NA_ROWS = 0
   - WARN if (FORMAT >= 1 and RULES >= 1) OR NA_ROWS > 0

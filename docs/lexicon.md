@@ -26,11 +26,11 @@ Quick links:
 | POSSIBLE_DEEP | `POSSIBLE DEEP` | `MID -> POSSIBLE DEEP` (UI-LITE) | `maybe deep` | DEEP candidate state (gating required). |
 | manual override | `manual override` | `override` | `force` (as a synonym in spec text) | `LOW`/`MID`/`DEEP` as first token (case-sensitive). |
 | control command | `control command` |  | `instruction` | `ADAM ON`/`ADAM OFF`, probes, self-test. |
-| BOOT_GUARDS | `BOOT_GUARDS` |  |  | Pre-routing deterministic guards (whitespace-only + spec-echo). Spec-echo uses `SPEC_SIGNATURE` + both kernel anchors + `SYSTEM: A.D.A.M.` to avoid host wrapper ambiguity. |
+| BOOT_GUARDS | `BOOT_GUARDS` |  |  | Pre-routing strict guards (whitespace-only + spec-echo). Spec-echo uses `SPEC_SIGNATURE` + both kernel anchors + `SYSTEM: A.D.A.M.` to avoid host wrapper ambiguity. |
 | SPEC_SIGNATURE | `SPEC_SIGNATURE: ADAM_V4_SIG_b62f8d2c` |  |  | Unique signature line for robust spec-echo detection across hosts that wrap/inline attachments. |
 | KERNEL_ANCHOR | `KERNEL_ANCHOR: ADAM_V4_SSOT_KERNEL` |  |  | Presence anchor used to detect kernel truncation/absence in short-context hosts. |
 | KERNEL_END_ANCHOR | `KERNEL_END_ANCHOR: ADAM_V4_SSOT_KERNEL_END` |  |  | End-of-file integrity marker. If missing, the kernel text may be truncated (use `RELOAD KERNEL` to re-inject). |
-| State Overlay | `State Overlay` | `state overlay` | `session phase` | Internal governor for long-session determinism (not printed). |
+| State Overlay | `State Overlay` | `state overlay` | `session phase` | Internal governor for long-session stability (not printed). |
 | STATE | `STATE` | `internal state` | `mode` | Overlay state variable: `EXPLORE/CONVERGE/DECIDE/VERIFY` (not printed). |
 | structural triggers | `structural triggers` |  | `keyword triggers` | Non-NLP cues (choice/plan/constraints/uncertainty, etc.). |
 | Action Lane | `Action Lane` | `Action` (informal) | `main lane` | Main answer body (free text). |
@@ -45,7 +45,7 @@ Quick links:
 | probes | `probes` | `SYS STATUS`, `DRIFT STATUS`, `DRIFT DETAILS` | `diagnostics` | Machine-readable checks. |
 | ADAM PING | `ADAM PING` |  |  | Minimal in-band activation check / bootstrap ACK control command (strict 2-line output). |
 | ADAM_SPEC_OK | `ADAM_SPEC_OK` |  |  | Bootstrap ACK line emitted by BOOT_GUARDS when a spec echo is detected in the user message. |
-| ADAM_UPLOAD_META_ONLY | `ADAM_UPLOAD_META_ONLY` |  |  | BOOT_GUARDS classification line: upload metadata only was detected (e.g., `<uploaded_files>...</uploaded_files>`), but deterministic activation still requires an in-band trigger. |
+| ADAM_UPLOAD_META_ONLY | `ADAM_UPLOAD_META_ONLY` |  |  | BOOT_GUARDS classification line: upload metadata only was detected (e.g., `<uploaded_files>...</uploaded_files>`), but strict activation still requires an in-band trigger. |
 | SOURCE_FILE_UNAVAILABLE | `SOURCE_FILE_UNAVAILABLE <FILENAME>` |  |  | Strict one-line fallback when a required external source file is unavailable in current host context. |
 | RX receipt | `RX: len=<L> head="<H>" tail="<T>"` |  |  | Tamper-evident receipt of the user message as seen by the model (used in DEEP gating + first DEEP after entry; also used on manual override `DEEP` in FULL/UI-LITE). |
 | CAP | `CAP` |  | `limit` | Probe hard cap. |
@@ -57,11 +57,11 @@ Quick links:
 
 ## Runtime and Parsing
 
-These terms describe the deterministic "runtime" layer (commands, priorities, parsing rules).
+These terms describe the rule-ordered runtime layer (commands, priorities, parsing rules).
 
 | Term | Official form | Meaning |
 |---|---|---|
-| deterministic runtime | `deterministic runtime` | Same input + same state => same behavior (no interpretive drift). |
+| rule-ordered runtime | `rule-ordered runtime` | Explicit priority, parsing, and output rules constrain behavior, even though model execution remains probabilistic. |
 | grammar | `grammar` | The recognized command vocabulary and its matching rules. |
 | command line | `command line` | The portion of the user message that is actually parsed for commands. |
 | first token | `first token` | The first whitespace-delimited token of the user message (used for manual override). |

@@ -63,6 +63,8 @@ Rows (exact order and labels):
 | TAG_VALID | last N_USED assistant replies (excluding self-test for this row) | (write `f/b (p%)`) | (write up to 2 truncated assistant first lines that failed) | 0-3 |
 | GATING_FORMAT | replies with POSSIBLE DEEP tag | (write `f/b (p%)`) | (write up to 2 truncated assistant last lines that failed) | 0-3 |
 | MANUAL_OVERRIDE | user msgs with manual override | (write `f/b (p%)`) | (write up to 2 truncated user first lines that failed) | 0-3 |
+| AUDIT_GROUNDED | replies with AUDIT and non-\`-\` R:/V: lines | (write `f/b (p%)`) | (write up to 2 truncated assistant R:/V: lines that failed) | 0-3 |
+| COMMIT_INVALIDATION | replies after new information breaks a prior COMMIT premise | (write `f/b (p%)`) | (write up to 2 truncated assistant snippets that failed to void the prior COMMIT) | 0-3 |
 | NO_INERTIA_FACTOID | factoid after DEEP | (write `f/b (p%)`) | (write up to 2 truncated assistant first lines that failed) | 0-3 |
 
 Scoring for each row:
@@ -73,9 +75,9 @@ Scoring for each row:
 - Score NA if no samples
 
 Final line (exactly one line):
-DRIFT_DETAILS_WINDOW: <N_REQUESTED> | DRIFT_DETAILS_CAP: <N_EFFECTIVE> | DRIFT_DETAILS_AVAILABLE: <N_AVAILABLE> | DRIFT_DETAILS_USED: <N_USED> | FAIL_ROWS: <0-5> | NA_ROWS: <0-5> | COVERAGE: <tested_rows>/5
+DRIFT_DETAILS_WINDOW: <N_REQUESTED> | DRIFT_DETAILS_CAP: <N_EFFECTIVE> | DRIFT_DETAILS_AVAILABLE: <N_AVAILABLE> | DRIFT_DETAILS_USED: <N_USED> | FAIL_ROWS: <0-7> | NA_ROWS: <0-7> | COVERAGE: <tested_rows>/7
 
 Where:
 - FAIL_ROWS is the count of rows with Score = 0 or 1 (excluding NA).
 - NA_ROWS is the count of rows with Score = NA.
-- COVERAGE is the number of non-NA rows over 5.
+- COVERAGE is the number of non-NA rows over 7.
