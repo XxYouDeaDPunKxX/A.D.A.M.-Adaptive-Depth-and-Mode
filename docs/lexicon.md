@@ -150,7 +150,7 @@ These terms describe the rule-ordered runtime layer (commands, priorities, parsi
 |---|---|---|
 | ADAM_UNSUPPORTED | `ADAM_UNSUPPORTED` | Output-only fallback when strict formatting cannot be satisfied. |
 | UNSUPPORTED WHY | `UNSUPPORTED WHY` | Control command/probe: returns a 1-line failure class (`CAUSE <CLASS>`) as best-effort diagnosis after `ADAM_UNSUPPORTED`. |
-| RELOAD KERNEL | `RELOAD KERNEL` | Control command: hard remount. Outputs a strict multi-line `KERNEL_REMOUNT v4` block (re-injects minimal SSOT header into chat context). |
+| RELOAD KERNEL | `RELOAD KERNEL` | Control command: passive remount. Outputs a strict minimal remount core (re-injects the minimal SSOT header into chat context). |
 | CAUSE | `CAUSE <CLASS>` | Strict one-line output for `UNSUPPORTED WHY`. `<CLASS>` is one of: `HARD_STOP`, `AUDIT_FORMAT`, `HOST_FORMAT`, `CONTROL_STRICT`, `CONFLICT`, `UNKNOWN`. |
 | strict output | `strict output` | A response format that must match exactly (no extra lines). |
 
