@@ -1,10 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>A.D.A.M. | Adaptive Depth and Mode</title>
-  <meta name="description" content="A spec-first protocol for deterministic depth control, bounded epistemic output, and stable AI chat behavior.">
+  <meta name="description" content="A spec-first protocol for rule-ordered depth routing, bounded epistemic output, and stable AI chat behavior.">
   <meta property="og:title" content="A.D.A.M. | Adaptive Depth and Mode">
   <meta property="og:description" content="A protocol for controlling depth, not just prompting it.">
   <meta property="og:type" content="website">
@@ -35,7 +35,7 @@
           <p class="eyebrow">Adaptive Depth and Mode</p>
           <h1>A protocol for controlling depth, not just prompting it.</h1>
           <p class="lead">
-            A.D.A.M. is a spec-first control layer for AI chat: deterministic routing,
+            A.D.A.M. is a spec-first control layer for AI chat: rule-ordered routing,
             bounded audit, explicit depth transitions, and fail-closed behavior when the host cannot respect the contract.
           </p>
           <div class="cta-row">
@@ -97,7 +97,7 @@
             </article>
             <article class="feature-card">
               <h3>Fail-closed behavior</h3>
-              <p>If the host cannot satisfy the contract, the protocol degrades deterministically.</p>
+              <p>If the host cannot satisfy the contract, the protocol fails in visible, rule-bound ways.</p>
               <code>ADAM_UNSUPPORTED</code>
             </article>
           </div>
@@ -183,7 +183,7 @@ Switch to DEEP? (yes/no)</code></pre>
           <h2>Uploads can be inline, side-channel, polluted, or broken.</h2>
           <p>
             A.D.A.M. is designed around actual host friction: boot guards, explicit probes, degraded transports,
-            strict command matching, and deterministic fallback behavior.
+            strict command matching, and strict fallback behavior.
           </p>
         </div>
         <div class="host-map">
@@ -246,7 +246,7 @@ Switch to DEEP? (yes/no)</code></pre>
     </main>
 
     <footer class="site-footer">
-      <p>A.D.A.M. v4 protocol line · v0.4.0 public release · CC BY-SA 4.0</p>
+      <p>A.D.A.M. v4 protocol line · v0.4.1 public release · CC BY-SA 4.0</p>
     </footer>
   </div>
 
