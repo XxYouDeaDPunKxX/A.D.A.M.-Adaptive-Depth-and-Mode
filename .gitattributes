@@ -1,3 +1,9 @@
-index.html linguist-vendored
+﻿index.html linguist-vendored
 styles.css linguist-vendored
 script.js linguist-vendored
+*.md text eol=lf
+*.txt text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.yml text eol=lf
