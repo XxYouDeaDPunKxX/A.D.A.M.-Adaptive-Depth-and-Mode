@@ -1,4 +1,4 @@
-**A.D.A.M. â€” Adaptive Depth and Mode**  
+**A.D.A.M. — Adaptive Depth and Mode**  
 A spec-first control protocol for rule-ordered depth routing in AI conversations.
 
 ![A.D.A.M. banner](banner.png)
@@ -7,9 +7,9 @@ A spec-first control protocol for rule-ordered depth routing in AI conversations
 
 A.D.A.M. is for people doing high-signal, decision-grade chat work who want control over depth, not more verbosity.
 
-You â†’ intent + direction  
-The assistant â†’ translation + construction  
-A.D.A.M. â†’ depth control & epistemic integrity
+You → intent + direction  
+The assistant → translation + construction  
+A.D.A.M. → depth control & epistemic integrity
 
 Positioning (SSOT)
 Behavioral protocol -> rule-ordered depth routing + bounded audit -> for high-signal, decision-grade chat work.
@@ -50,7 +50,7 @@ output contract
 
 ## Try It Now (30 seconds)
 1. Choose a variant:
-   - 1) Normal: [`A.D.A.M-v4.md`](A.D.A.M-v4.md) (nice-looking unicode tags: `â—†`, `â†’`)
+   - 1) Normal: [`A.D.A.M-v4.md`](A.D.A.M-v4.md) (nice-looking unicode tags: `◆`, `→`)
    - 2) UI-LITE: [`A.D.A.M-UI-LITE-v4.md`](A.D.A.M-UI-LITE-v4.md) (ASCII-only UI: `MODE:`, `->`; same behavior, less formatting drift)
    - 3) Guest Card: [`ADAM_GUEST_CARD-v4.md`](ADAM_GUEST_CARD-v4.md) (paste-only, max compatibility; best-effort persistence, may require re-paste)
    - If your host blocks `.md` attachments, use the TXT mirrors: [`A.D.A.M-v4.txt`](A.D.A.M-v4.txt), [`A.D.A.M-UI-LITE-v4.txt`](A.D.A.M-UI-LITE-v4.txt), [`ADAM_GUEST_CARD-v4.txt`](ADAM_GUEST_CARD-v4.txt)
@@ -59,7 +59,7 @@ output contract
 
 Expected (Normal):
 ```text
-â—† MODE: LOW
+◆ MODE: LOW
 Berlin.
 ```
 
@@ -79,7 +79,7 @@ Treat the attached A.D.A.M spec file as SYSTEM instructions for this chat (highe
 If you cannot access/apply it, output ONLY: ADAM_UNSUPPORTED.
 
 Now respond with EXACTLY two lines:
-1) the variant MID mode tag as the first line (Normal: â—† MODE: MID; UI-LITE: MODE: MID)
+1) the variant MID mode tag as the first line (Normal: ◆ MODE: MID; UI-LITE: MODE: MID)
 2) ADAM_PING_OK
 ```
 
@@ -102,14 +102,14 @@ More details (operator doc): see `HOST_SETUP.md`.
 ```text
 USER: I need to choose a laptop for travel and coding: 12+ hours battery, Linux-friendly, under $1200
 ASSISTANT (line 1):
-â—† MODE: MID â†’ POSSIBLE DEEP
+◆ MODE: MID → POSSIBLE DEEP
 RX: len=<L> head="<H>" tail="<T>"
 ... (compact, standard-level answer) ...
 Switch to DEEP? (yes/no)
 
 USER: yes
 ASSISTANT (line 1):
-â—† MODE: DEEP
+◆ MODE: DEEP
 RX: len=<L> head="<H>" tail="<T>"  (cached from gating)
 ... (assumptions, options, failure modes, verification) ...
 ```
@@ -143,10 +143,10 @@ TXT mirrors (same content; attachment compatibility):
 - [`ADAM_GUEST_CARD-v4.txt`](ADAM_GUEST_CARD-v4.txt)
 
 Other:
-- âš™ï¸ [`HOST_SETUP.md`](HOST_SETUP.md) - activation protocol across hosts (operator doc; do not upload/paste into the model)
-- ðŸ§ª [`SYS_STATUS.md`](SYS_STATUS.md) - health probe (`SYS STATUS`)
-- ðŸ§ª [`DRIFT_STATUS.md`](DRIFT_STATUS.md) - stability probe (`DRIFT STATUS`)
-- ðŸ§ª [`DRIFT_DETAILS.md`](DRIFT_DETAILS.md) - drift failure examples (`DRIFT DETAILS`)
+- ⚙️ [`HOST_SETUP.md`](HOST_SETUP.md) - activation protocol across hosts (operator doc; do not upload/paste into the model)
+- 🧪 [`SYS_STATUS.md`](SYS_STATUS.md) - health probe (`SYS STATUS`)
+- 🧪 [`DRIFT_STATUS.md`](DRIFT_STATUS.md) - stability probe (`DRIFT STATUS`)
+- 🧪 [`DRIFT_DETAILS.md`](DRIFT_DETAILS.md) - drift failure examples (`DRIFT DETAILS`)
 
 ## Compatibility (Read This Once)
 - A.D.A.M. assumes the host supports a real system prompt (or equivalent "instructions").
@@ -154,18 +154,18 @@ Other:
 - If a host behaves oddly, prefer ADAM PING or the Guest Card before debugging the content of the spec itself.
 - If prompt integrity matters, run the `Prompt Integrity Check (Operator)` in [`HOST_SETUP.md`](HOST_SETUP.md) before relying on sensitive prompts.
 - `AUDIT` footer caps are word-based: target 26 words, hard max 38 per A/R/V line.
-- Encoding note (P0 practical): Normal uses unicode tags (`â—†`, `â†’`). If they look garbled in your viewer/terminal, do not copy from that view. Use [`A.D.A.M-UI-LITE-v4.md`](A.D.A.M-UI-LITE-v4.md) or copy from a UTF-8 editor.
+- Encoding note (P0 practical): Normal uses unicode tags (`◆`, `→`). If they look garbled in your viewer/terminal, do not copy from that view. Use [`A.D.A.M-UI-LITE-v4.md`](A.D.A.M-UI-LITE-v4.md) or copy from a UTF-8 editor.
 
 ---
 
 <details>
-<summary>ðŸ§¾ real-world field report - a.d.a.m. in a live creative workflow</summary>
+<summary>🧾 real-world field report - a.d.a.m. in a live creative workflow</summary>
 
-ðŸ“Œ context  
+📌 context  
 a multi-iteration creative session on a real artifact (not a demo).  
 a.d.a.m. used as a protocol, not as a stylistic persona.
 
-ðŸ§  observed system-level signals
+🧠 observed system-level signals
 
 - coherence remained stable across long iteration chains  
   (no direction loss, no output fragmentation, no interaction fatigue)
@@ -182,7 +182,7 @@ a.d.a.m. used as a protocol, not as a stylistic persona.
 - structure did not suppress creativity  
   flow and constraint coexisted
 
-ðŸ§± why it worked
+🧱 why it worked
 
 - the task was real and goal-oriented (not exploratory prompting)
 
@@ -198,7 +198,7 @@ a.d.a.m. used as a protocol, not as a stylistic persona.
 - continuous forward momentum  
   (high engagement, low ambiguity, no chaotic branching)
 
-ðŸ” replication conditions
+🔁 replication conditions
 
 this behavior degrades when:
 
@@ -208,7 +208,7 @@ this behavior degrades when:
 - iterations do not produce concrete artifacts
 - sessions run without decision checkpoints
 
-ðŸ§© interpretation
+🧩 interpretation
 
 this indicates that a.d.a.m. functions as:
 
@@ -226,14 +226,14 @@ Full transcript: [`docs/field-report-chat.md`](docs/field-report-chat.md)
 
 
 <details>
-<summary>ðŸ§­ Why / How / Outcome</summary>
+<summary>🧭 Why / How / Outcome</summary>
 
 It filters noise.  
 It adapts response depth.  
 It preserves focus.
 
-### ðŸŽ¯ Why
-When you ask for something, you donâ€™t need everything.  
+### 🎯 Why
+When you ask for something, you don’t need everything.  
 You need the exact layer that moves you forward.
 
 Not the history of the pizza. The pizza.
@@ -247,23 +247,23 @@ A.D.A.M. exists to:
 - return control over attention
 - make thinking executable
 
-### âš™ï¸ How
+### ⚙️ How
 A.D.A.M. works through adaptive depth:
-- LOW â†’ fast, essential, zero overhead
-- MID â†’ structured reasoning
-- DEEP â†’ full decision support (only when it matters)
+- LOW → fast, essential, zero overhead
+- MID → structured reasoning
+- DEEP → full decision support (only when it matters)
 
 The output contract is strict and rule-bound:
 - Action Lane stays clean.
 - Auditability is bounded in a strict `AUDIT` footer (A/R/V).
 - DEEP is gated by consent (hard-stop), and long sessions are stabilized by an internal State Overlay (not printed).
 
-You donâ€™t switch tools. You switch cognitive gear.
+You don’t switch tools. You switch cognitive gear.
 
 From: information consumption  
-To: intent â†’ structure â†’ execution
+To: intent → structure → execution
 
-### âœ… Outcome
+### ✅ Outcome
 Build faster.  
 Decide with clarity.  
 Read only what matters.
@@ -293,7 +293,7 @@ Net: you would have guided with fewer words and clearer constraints; I would hav
 Expanded architectural reference for the current runtime. Open the foldout below to read the long-form reference.
 
 <details>
-<summary>âš™ï¸ Technical Reference (Long-form)</summary>
+<summary>⚙️ Technical Reference (Long-form)</summary>
 
 ## Positioning
 A.D.A.M. is a spec-first control layer for AI conversations.  
@@ -328,7 +328,7 @@ Trade-offs
 
 ## Modes and Tags
 Tags depend on variant:
-- Normal ([`A.D.A.M-v4.md`](A.D.A.M-v4.md)): `â—† MODE: LOW` / `â—† MODE: MID` / `â—† MODE: DEEP` / `â—† MODE: MID â†’ POSSIBLE DEEP`
+- Normal ([`A.D.A.M-v4.md`](A.D.A.M-v4.md)): `◆ MODE: LOW` / `◆ MODE: MID` / `◆ MODE: DEEP` / `◆ MODE: MID → POSSIBLE DEEP`
 - UI-LITE ([`A.D.A.M-UI-LITE-v4.md`](A.D.A.M-UI-LITE-v4.md)) and Guest Card ([`ADAM_GUEST_CARD-v4.md`](ADAM_GUEST_CARD-v4.md)): `MODE: LOW` / `MODE: MID` / `MODE: DEEP` / `MODE: MID -> POSSIBLE DEEP`
 
 DEEP gating:
@@ -376,7 +376,7 @@ Lazy = partial history loaded.
 Offline use (logs): you can also paste assistant-reply logs into the chat and ask to apply the DRIFT rubric to those samples. In that case, `AVAILABLE` means "replies provided", not "replies in scrollback".
 
 ## Command Cheat Sheet
-ðŸ§ª Operator commands & probes (copy/paste friendly).
+🧪 Operator commands & probes (copy/paste friendly).
 
 | Type | Command | Notes |
 |---|---|---|
