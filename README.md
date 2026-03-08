@@ -31,6 +31,39 @@ What you get:
 
 Quick links: [Try It Now](#try-it-now-30-seconds) | [Variants](#what-this-repo-contains) | [Probes](#command-cheat-sheet) | [Lexicon](docs/lexicon.md) | [Field report](docs/field-report-chat.md)
 
+## Start Here
+
+If you want to use A.D.A.M. now:
+- Primary entrypoint: [`A.D.A.M-v4.md`](A.D.A.M-v4.md)
+
+If you want the lighter operational surface (less formatting drift, lightweight UI):
+- [`A.D.A.M-UI-LITE-v4.md`](A.D.A.M-UI-LITE-v4.md)
+
+If you need maximum host compatibility:
+- [`ADAM_GUEST_CARD-v4.md`](ADAM_GUEST_CARD-v4.md)
+
+If you want to study the architecture first:
+- start from the reference docs in [`docs/`](docs/)
+
+## Repo Structure
+
+- Core Spec: [`A.D.A.M-v4.md`](A.D.A.M-v4.md)
+- Operational Surface (lighter, less formatting drift): [`A.D.A.M-UI-LITE-v4.md`](A.D.A.M-UI-LITE-v4.md)
+- Compatibility Layer: [`ADAM_GUEST_CARD-v4.md`](ADAM_GUEST_CARD-v4.md)
+- Reference Docs: [`docs/`](docs/)
+- Host and diagnostic material: [`HOST_SETUP.md`](HOST_SETUP.md), [`SYS_STATUS.md`](SYS_STATUS.md), [`DRIFT_STATUS.md`](DRIFT_STATUS.md), [`DRIFT_DETAILS.md`](DRIFT_DETAILS.md)
+
+## Minimal Use
+
+Primary file:
+- [`A.D.A.M-v4.md`](A.D.A.M-v4.md)
+
+Fast path:
+1. Load `A.D.A.M-v4.md` as system/instructions.
+2. Paste your task or artifact.
+3. Run one turn.
+4. Check that the first output line follows the A.D.A.M. mode contract.
+
 Concept diagram (official)
 ```text
 input
@@ -408,5 +441,4 @@ See [`LICENSE`](LICENSE).
 - Privacy depends on the host where you paste/run A.D.A.M.
 
 </details>
-
 

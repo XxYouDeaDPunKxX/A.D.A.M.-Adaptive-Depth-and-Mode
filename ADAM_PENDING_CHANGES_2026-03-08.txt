@@ -1,0 +1,103 @@
+ADAM pending changes memo
+Date: 2026-03-08
+Context: PA_PVP review snapshot for possible integration into current A.D.A.M.
+
+Status summary
+- No repo patch has been applied yet.
+- No real equivalence verification has been executed yet.
+- This memo records the agreed design direction only.
+
+Accepted direction
+
+1) Section B
+- Integrate a compact B into current A.D.A.M. if behavior remains equivalent.
+- Goal: reduce runtime noise and upload cost without losing epistemic guardrails.
+- Keep these functions:
+  - if information is not verifiable here, say so and switch to targeted questions or conditional scenarios
+  - no per-claim epistemic labels by default
+  - AUDIT only when AUDIT_ON is true
+  - PRIMARY/SECONDARY only with verifiable citation
+  - no claims of full verification / exhaustive coverage without explicit scope
+  - when recommending, separate explanation from action and provide observable verification
+- Expected ROI: high
+- Expected regression risk: low
+- Verification gate before merge:
+  - T22 Grounded AUDIT
+  - T24 Completeness overclaim
+
+2) Section S
+- Integrate only a compact explicit kernel, not a negative-only rewrite.
+- Goal: keep structural SSOT explicit while moving regression corpus out of runtime.
+- Keep explicit in runtime:
+  - structural primitives
+  - booleans
+  - MINI_TABLE_TRIGGER
+  - RETROGRADE_HARD
+  - DEEP_CANDIDATE
+  - AUDIT_ON
+- Move out of runtime:
+  - canonical MUST / MUST NOT examples
+  - example-heavy normative corpus
+- Expected ROI: high
+- Expected regression risk: medium
+- Verification gate before merge:
+  - tests/structural_kernel_v4.md
+  - self-test set T1-T18
+- Hard constraint:
+  - do not dissolve S into soft natural-language guidance
+  - do not reintroduce semantic routing by implication
+
+3) Section G
+- Integrate a trimmed runtime G into current A.D.A.M.
+- Goal: reduce host noise by moving embedded regression catalog out of the runtime body.
+- Keep inline in runtime:
+  - strict command behavior
+  - ADAM_UNSUPPORTED fail-closed behavior
+  - SOURCE_FILE_UNAVAILABLE behavior
+  - exact RELOAD KERNEL payload
+  - exact ADAM REMOUNT payload
+  - minimal ADAM SELF TEST contract
+- Move out of runtime:
+  - long invariant catalog
+  - detailed self-test cases
+  - explanatory regression prose
+- Expected ROI: high
+- Expected regression risk: low-medium
+- Verification gate before merge:
+  - ADAM SELF TEST
+  - RELOAD KERNEL
+  - ADAM REMOUNT
+  - T25-T28
+
+Rejected direction
+
+4) Radical negative-only rewrite
+- Rejected.
+- Reason:
+  - under-specifies the routing kernel
+  - weakens structural determinism
+  - pushes ambiguity back to host/model interpretation
+- Keep instead:
+  - compact explicit kernel
+  - negative guardrails only around overclaim and drift boundaries
+
+Project philosophy to preserve
+- less is best
+- upload on the fly
+- minimum host noise
+- spec-first runtime
+- structural routing must remain explicit where behavior is contract-critical
+
+Actual state at stop point
+- Design direction is clear.
+- Repo implementation is not started.
+- Real verification is not started.
+
+Recommended resume order
+1) Patch Section B in Normal and UI-LITE.
+2) Run T22 and T24.
+3) Patch Section S by externalizing examples and compacting only the explicit kernel.
+4) Run structural kernel tests and T1-T18.
+5) Patch Section G by externalizing the long regression catalog.
+6) Run ADAM SELF TEST, RELOAD KERNEL, ADAM REMOUNT, and T25-T28.
+
