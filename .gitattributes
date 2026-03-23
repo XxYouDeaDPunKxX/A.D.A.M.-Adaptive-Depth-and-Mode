@@ -3,7 +3,7 @@ styles.css linguist-vendored
 script.js linguist-vendored
 *.md text eol=lf
 *.txt text eol=lf
-*.html text eol=lf
-*.css text eol=lf
-*.js text eol=lf
+*.html text eol=lf linguist-detectable=false
+*.css text eol=lf linguist-detectable=false
+*.js text eol=lf linguist-detectable=false
 *.yml text eol=lf
