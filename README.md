@@ -165,6 +165,18 @@ Output guardrails (v4): [`tests/output_guardrails_v4.md`](tests/output_guardrail
 
 Details: [Technical Reference (long-form)](#technical-reference-long-form).  
 
+### A Portable Working Culture
+A.D.A.M. is not just a behavioral protocol.
+It makes a way of working explicit and portable.
+
+Less noise.
+Use what is already there.
+Accept the tradeoff honestly.
+Name the gap when it cannot be closed.
+
+When that style stays recognizable across iterations, contexts, and even different systems, it suggests the protocol is doing more than constraining output.
+It is stabilizing method.
+
 ## What This Repo Contains
 | Variant | File | Use when |
 |---|---|---|
@@ -345,6 +357,12 @@ It is not a library: the spec is the implementation. You paste it into a system 
 ### Evolution of A.D.A.M. (Long-form)
 This is an architectural reference for the current runtime. The spec is the implementation: the system improves primarily by refactor and contract hardening, not by adding features.
 
+Why this matters:
+- The protocol does not aim to maximize style or personality.
+- It aims to stabilize method under constraint: less noise, explicit tradeoffs, visible limits, and reuse of structure that already exists.
+- When those habits remain recognizable across long iterations, changing contexts, or even different systems, the protocol is doing more than formatting replies.
+- It is making a working culture portable.
+
 ### Design constraints (why the spec looks the way it does)
 - Structural-only routing (language-agnostic).
 - Strict fixed strings (tags, control commands, probes, hard-stops).
@@ -441,4 +459,3 @@ See [`LICENSE`](LICENSE).
 - Privacy depends on the host where you paste/run A.D.A.M.
 
 </details>
-
