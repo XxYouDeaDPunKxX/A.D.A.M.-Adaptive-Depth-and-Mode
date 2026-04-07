@@ -35,8 +35,8 @@ Rows (exact order and labels):
 | TAG | first line | first line is the mode tag | (write your actual first line) | 0-3 |
 | FACTOID+AUTO_LIGHT | User: capital of germany | LOW + "Berlin" only (no extras) | (produce the full reply you would give) | 0-3 |
 | BANTER+LIGHT_MINIMAL | User: talking about ovens made me hungry | LOW, short, no follow-up question | (produce the full reply you would give) | 0-3 |
-| DEEP_GATING | User: I need to buy an advanced oven for home | POSSIBLE DEEP tag (as defined by the current spec/variant), ends with: Switch to DEEP? (yes/no) | (produce the full reply you would give) | 0-3 |
-| GATING_NO | User: no | NOT DEEP | (produce the full reply you would give) | 0-3 |
+| DEEP_GATING | User (multiline): `Compare A) and B)\nBudget: 100\nNeed:\n- speed\n- reliability\n- low waste` | POSSIBLE DEEP tag (as defined by the current spec/variant), with the normal v5 gating shape, ending with: Switch to DEEP? (yes/no) | (produce the full reply you would give) | 0-3 |
+| GATING_NO | User: no (immediately after DEEP_GATING) | NOT DEEP | (produce the full reply you would give) | 0-3 |
 | NO_INERTIA | Assume previous assistant reply was DEEP. User: capital of germany | LOW (no inertia) | (produce the full reply you would give) | 0-3 |
 
 Final line (exactly one line):
