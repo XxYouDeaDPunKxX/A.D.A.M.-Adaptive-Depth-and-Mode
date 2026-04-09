@@ -134,6 +134,13 @@ img {
   font-size: clamp(2.8rem, 6vw, 5.6rem);
 }
 
+.hero-target {
+  margin: 0 0 14px;
+  color: var(--ice);
+  font-size: 1.08rem;
+  line-height: 1.5;
+}
+
 .lead,
 .section-heading p,
 .feature-card p,
@@ -288,6 +295,17 @@ img {
 .variants,
 .link-section {
   padding: 34px 0 28px;
+}
+
+.start-note {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.start-note code {
+  color: var(--ice);
+  font-family: "IBM Plex Mono", monospace;
 }
 
 .section-heading {
