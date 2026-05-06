@@ -106,21 +106,6 @@ LOW
 MID
 DEEP
 ```
-
-Examples:
-
-```text
-LOW explain this in one sentence
-```
-
-```text
-MID help me compare these two options
-```
-
-```text
-DEEP analyze this decision and its failure modes
-```
-
 When automatic routing detects that a request may need deeper reasoning, A.D.A.M. marks it as `POSSIBLE DEEP` and asks before entering the full `DEEP` response:
 
 ```text
