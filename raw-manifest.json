@@ -1,0 +1,78 @@
+{
+  "name": "A.D.A.M.",
+  "subtitle": "Adaptive Depth and Mode",
+  "type": "AI control protocol",
+  "description": "A spec-first protocol for controlling response depth, preserving signal, and reducing noise in AI chat.",
+  "page_url": "https://xxyoudeadpunkxx.github.io/A.D.A.M.-Adaptive-Depth-and-Mode/",
+  "repository": "https://github.com/XxYouDeaDPunKxX/A.D.A.M.-Adaptive-Depth-and-Mode",
+  "license": "CC BY-SA 4.0",
+  "canonical_file": "A.D.A.M.v5.txt",
+  "activation": {
+    "instruction_surface": "Load A.D.A.M.v5.txt into a compatible chat host instruction surface.",
+    "bootstrap": "Send ADAM PING twice at the start.",
+    "first_ping": "Starts A.D.A.M. and checks bootstrap state.",
+    "second_ping": "Confirms liveness on the next turn."
+  },
+  "modes": [
+    {
+      "name": "LOW",
+      "meaning": "Fast, minimal answers."
+    },
+    {
+      "name": "MID",
+      "meaning": "Normal structured answers."
+    },
+    {
+      "name": "POSSIBLE DEEP",
+      "meaning": "A deeper pass may be useful; consent is required."
+    },
+    {
+      "name": "DEEP",
+      "meaning": "Full decision support."
+    }
+  ],
+  "commands": [
+    "ADAM PING",
+    "LOW",
+    "MID",
+    "DEEP",
+    "ADAM SELF TEST",
+    "SYS STATUS",
+    "TRACE INPUT",
+    "ADAM OFF",
+    "ADAM ON",
+    "ADAM REMOUNT"
+  ],
+  "repository_files": [
+    {
+      "path": "A.D.A.M.v5.txt",
+      "purpose": "Canonical protocol file."
+    },
+    {
+      "path": "ADAM_SELF_TEST.md",
+      "purpose": "External self-test probe."
+    },
+    {
+      "path": "SYS_STATUS.md",
+      "purpose": "Lightweight session health/status probe."
+    },
+    {
+      "path": "docs/lexicon.md",
+      "purpose": "Official terminology."
+    },
+    {
+      "path": "docs/field-report-chat.md",
+      "purpose": "Field report from a real creative workflow."
+    }
+  ],
+  "keywords": [
+    "AI protocol",
+    "AI chat control",
+    "response depth",
+    "LOW MID DEEP",
+    "bounded audit",
+    "prompt protocol",
+    "A.D.A.M.",
+    "Adaptive Depth and Mode"
+  ]
+}
