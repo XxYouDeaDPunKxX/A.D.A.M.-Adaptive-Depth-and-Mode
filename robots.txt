@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xxyoudeadpunkxx.github.io/A.D.A.M.-Adaptive-Depth-and-Mode/sitemap.xml
