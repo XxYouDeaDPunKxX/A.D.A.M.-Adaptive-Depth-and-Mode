@@ -6,26 +6,63 @@ Type: AI control protocol
 URL: https://xxyoudeadpunkxx.github.io/A.D.A.M.-Adaptive-Depth-and-Mode/
 Repository: https://github.com/XxYouDeaDPunKxX/A.D.A.M.-Adaptive-Depth-and-Mode
 License: CC BY-SA 4.0
+License URL: https://creativecommons.org/licenses/by-sa/4.0/
 Canonical file: A.D.A.M.v5.txt
 
-## Purpose
+## What this is
+
 A.D.A.M. is a spec-first protocol for controlling response depth, preserving signal, and reducing noise in AI chat.
 
-## Core behavior
-- LOW: fast, minimal answers.
-- MID: normal structured answers.
-- DEEP: full decision support through automatic detection plus consent, or manual override.
-- POSSIBLE DEEP: proposed when the request shape suggests deeper reasoning may be useful.
-- Bounded audit: ACTION, RISK, and BASIS remain short and operational.
-- Fail-closed behavior: unsupported host conditions can produce ADAM_UNSUPPORTED instead of pretending the protocol is active.
+It is not a chatbot personality, prompt aesthetic, or generic productivity framework. It is a control layer for routing answers through explicit depth modes and bounded audit behavior.
 
-## Activation
+## Operating line
+
+Simple work stays simple. Complex work can escalate. Ambiguous work is routed before it drifts.
+
+## Use case
+
+Use A.D.A.M. when AI chat responses become too shallow, too deep too early, too assumptive, or too noisy for the actual task.
+
+The protocol is designed for everyday chat, structured tasks, and deeper analysis when needed.
+
+## Canonical source
+
+The canonical protocol file is:
+A.D.A.M.v5.txt
+
+Treat the repository as the live public source. Treat this file as the LLM-readable project index, not as the full protocol specification.
+
+## Core behavior
+
+LOW:
+Fast, minimal answers.
+
+MID:
+Normal structured answers.
+
+POSSIBLE DEEP:
+A deeper pass may be useful. The protocol proposes escalation instead of silently expanding.
+
+DEEP:
+Full decision support through automatic detection plus consent, or through manual override.
+
+Bounded audit:
+When audit is active, ACTION, RISK, and BASIS remain short and operational.
+
+Fail-closed behavior:
+Unsupported host conditions can produce ADAM_UNSUPPORTED instead of pretending the protocol is active.
+
+## Activation summary
+
 Load A.D.A.M.v5.txt into a compatible chat host instruction surface.
-Send ADAM PING twice at the start.
+
+At session start, send ADAM PING twice.
+
 The first ping starts the protocol and checks bootstrap state.
 The second ping confirms liveness on the next turn.
 
 ## Commands
+
 - ADAM PING: activate or check liveness.
 - LOW: force a short answer.
 - MID: force a normal structured answer.
@@ -38,11 +75,30 @@ The second ping confirms liveness on the next turn.
 - ADAM REMOUNT: generate a recovery capsule for remounting.
 
 ## Repository files
+
 - A.D.A.M.v5.txt: canonical protocol file.
 - ADAM_SELF_TEST.md: external self-test probe.
 - SYS_STATUS.md: lightweight session health/status probe.
 - docs/lexicon.md: official terminology.
 - docs/field-report-chat.md: field report from a real creative workflow.
 
+## Discovery Set
+
+Machine-readable project files:
+
+- llms.txt: LLM-readable project index.
+- raw-manifest.json: structured machine-readable project manifest.
+- robots.txt: crawler access declaration.
+- sitemap.xml: sitemap for the GitHub Pages surface.
+
+HTML discovery signals:
+
+- canonical URL
+- rel=alternate for llms.txt
+- rel=alternate for raw-manifest.json
+- JSON-LD SoftwareSourceCode metadata
+- Open Graph metadata
+
 ## Keywords
-AI protocol, AI chat control, response depth, LOW MID DEEP, bounded audit, prompt protocol, A.D.A.M., Adaptive Depth and Mode
+
+AI protocol, AI chat control, response depth, LOW MID DEEP, bounded audit, prompt protocol, A.D.A.M., Adaptive Depth and Mode, AI response routing, ambiguity control, structured AI chat
