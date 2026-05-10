@@ -3,10 +3,14 @@
   "subtitle": "Adaptive Depth and Mode",
   "type": "AI control protocol",
   "description": "A spec-first protocol for controlling response depth, preserving signal, and reducing noise in AI chat.",
+  "url": "https://xxyoudeadpunkxx.github.io/A.D.A.M.-Adaptive-Depth-and-Mode/",
   "page_url": "https://xxyoudeadpunkxx.github.io/A.D.A.M.-Adaptive-Depth-and-Mode/",
   "repository": "https://github.com/XxYouDeaDPunKxX/A.D.A.M.-Adaptive-Depth-and-Mode",
   "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
   "canonical_file": "A.D.A.M.v5.txt",
+  "identity": "Simple work stays simple. Complex work can escalate. Ambiguous work is routed before it drifts.",
+  "use_case": "Use A.D.A.M. when AI chat responses become too shallow, too deep too early, too assumptive, or too noisy for the actual task.",
   "activation": {
     "instruction_surface": "Load A.D.A.M.v5.txt into a compatible chat host instruction surface.",
     "bootstrap": "Send ADAM PING twice at the start.",
@@ -65,6 +69,26 @@
       "purpose": "Field report from a real creative workflow."
     }
   ],
+  "discovery_set": {
+    "llms": "llms.txt",
+    "manifest": "raw-manifest.json",
+    "robots": "robots.txt",
+    "sitemap": "sitemap.xml",
+    "html_signals": [
+      "canonical URL",
+      "rel=alternate for llms.txt",
+      "rel=alternate for raw-manifest.json",
+      "JSON-LD SoftwareSourceCode metadata",
+      "Open Graph metadata",
+      "footer machine-readable links"
+    ]
+  },
+  "machine_readable_files": [
+    "llms.txt",
+    "raw-manifest.json",
+    "robots.txt",
+    "sitemap.xml"
+  ],
   "keywords": [
     "AI protocol",
     "AI chat control",
@@ -73,6 +97,9 @@
     "bounded audit",
     "prompt protocol",
     "A.D.A.M.",
-    "Adaptive Depth and Mode"
+    "Adaptive Depth and Mode",
+    "AI response routing",
+    "ambiguity control",
+    "structured AI chat"
   ]
 }
