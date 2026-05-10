@@ -75,7 +75,7 @@ figure {
 }
 
 .page-shell {
-  width: min(1240px, calc(100vw - var(--s-4)));
+  width: min(1680px, calc(100vw - var(--s-2)));
   margin: 0 auto;
   padding-bottom: var(--s-4);
 }
@@ -127,15 +127,16 @@ figure {
 }
 
 .phi-pair-hero {
-  grid-template-columns: minmax(0, 1.236fr) minmax(0, 1.618fr);
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 1.18fr);
 }
 
 .phi-pair-copy {
-  grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
 }
 
 .hero {
-  padding: var(--s-4) 0 var(--s-2);
+  align-items: start;
+  padding: var(--s-3) 0 var(--s-2);
 }
 
 .section-stack,
@@ -176,8 +177,8 @@ h3 {
 }
 
 .hero h1 {
-  max-width: 13.5ch;
-  font-size: clamp(2.45rem, 4.2vw, 4.25rem);
+  max-width: 16ch;
+  font-size: clamp(2.35rem, 3.6vw, 4rem);
 }
 
 h2,
@@ -293,8 +294,11 @@ h3 {
 }
 
 .art-frame-hero {
-  min-height: 34vw;
-  max-height: 55vw;
+  align-self: start;
+  width: min(100%, 960px);
+  margin-top: var(--s-3);
+  min-height: 0;
+  max-height: none;
 }
 
 .hero-glow {
@@ -388,6 +392,10 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+.framed-section.phi-pair-hero {
+  grid-template-columns: minmax(0, 1.236fr) minmax(0, 1fr);
+}
+
 .framed-section .art-frame {
   border-radius: var(--radius-md);
 }
@@ -447,12 +455,14 @@ h3 {
   .phi-pair,
   .phi-pair-hero,
   .phi-pair-copy,
+  .framed-section.phi-pair-hero,
   .card-grid-three,
   .card-grid-two {
     grid-template-columns: 1fr;
   }
 
   .art-frame-hero {
+    width: 100%;
     min-height: 0;
     max-height: none;
   }
