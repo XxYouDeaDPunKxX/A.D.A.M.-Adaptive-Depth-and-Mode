@@ -280,11 +280,13 @@ Use the lexicon when editing the protocol or documentation so that terms remain 
 
 </details>
 
-## 🙌 Credits
+## 🤖 AI-assisted development
 
-Author: `XxYouDeaDPunKxX` — concept, spec, behavior, and final decisions.
+This project was developed with AI assistance.
 
-AI-assisted drafting was used for documentation edits, wording, refactors, iteration speed-ups, and templates/images.
+The project, documentation, and repository materials were shaped through human-directed work supported by AI tools during drafting, structuring, review, and refinement.
+
+AI assistance does not make the project automatically correct, complete, or suitable for every use case. Read it, test it, and adapt it to your own context.
 
 ## 📜 License
 
